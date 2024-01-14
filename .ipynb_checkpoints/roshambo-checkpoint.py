@@ -1,6 +1,7 @@
 import random
 
 def roshambo():
+    
     choices = ["rock", "paper", "scissors"]
     rules = {
         "rock": "scissors",
@@ -46,7 +47,7 @@ def roshambo():
         print(f"Current Score: Team We - {point_me}, Machines - {point_machines}, Stalemates - {stalemate}\n")
 
     # Game Summary
-    print("\nAtlas! The games are over! \n")
+    print("\nAtlas! The games have concluded! \n")
     print(f"Final Score: Team We - {point_me}, Machines - {point_machines}, Stalemate - {stalemate}")
     
     if point_me > point_machines:
@@ -56,7 +57,7 @@ def roshambo():
         print("THE MACHINES HAVE WON 🤖🦾🦿")
     
     else:
-        print("The world waits... anxiously 🫥👀🪺")
+        print("Words of the world wistfully weave a wayward, worrisome waltz 🌬🎑🗞")
     
     print('\n') # aesthetic touch 
     
