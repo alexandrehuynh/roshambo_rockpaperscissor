@@ -2,20 +2,23 @@ import random
 
 def roshambo():
     
+    # define variables
     choices = ["rock", "paper", "scissors"]
     rules = {
         "rock": "scissors",
         "paper": "rock",
         "scissors": "paper"
     }
-
+    
+    # display screen
     print("Welcome to Roshambo!")
     print("exit, quit, stop, or leave at anytime \n")
 
+    # set scoreboard
     point_me, point_machines, stalemate = 0, 0, 0
     scoreboard = []
 
-    while True: # start the lop
+    while True: # start game of roshambo
         user_input = input("Draw on scisssors...\n  Rock, Paper, Scissors\n\n    Shoot:").strip().lower()
 
         # break: allow user to leave game
@@ -26,10 +29,11 @@ def roshambo():
             print("Stop cheating. Only Rock, Paper, or Scissors\nReady? ")
             continue
 
+        # cpu's move
         cpu_choice = random.choice(choices)
         print(f"CPU chose: {cpu_choice.capitalize()}")
 
-        # Determine the winner
+        # who's the winner
         if user_input == cpu_choice:
             result = "It's a tie! 🤝"
             stalemate += 1
@@ -41,13 +45,13 @@ def roshambo():
             point_machines += 1
 
             
-        # Print Recap
+        # round recap, update scoreboard
         print(f"\nRound Result: {result}")
         scoreboard.append((user_input, cpu_choice))
         print(f"Current Score: Team We - {point_me}, Machines - {point_machines}, Stalemates - {stalemate}\n")
 
-    # Game Summary
-    print("\nAtlas! The games have concluded! \n")
+    # game over, show final score and winner
+    print("\nAtlas! The Games have Concluded! \n")
     print(f"Final Score: Team We - {point_me}, Machines - {point_machines}, Stalemate - {stalemate}")
     
     if point_me > point_machines:
@@ -59,10 +63,12 @@ def roshambo():
     else:
         print("Words of the world wistfully weave a wayward, worrisome waltz 🌬🎑🗞")
     
-    print('\n') # aesthetic touch 
+    print('\n') 
     
+    # display recap of all the rounds
+    print(f"Round Recaps: ")
     for index, (user, cpu) in enumerate(scoreboard, start=1):
         print(f"Round {index}: You chose {user.capitalize()}, CPU chose {cpu.capitalize()}")
 
-# Main function
+####    Main function    ####
 roshambo()
