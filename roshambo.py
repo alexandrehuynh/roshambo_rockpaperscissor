@@ -52,11 +52,8 @@ def roshambo():
     # game over, show final score and winner
     print("\nAtlas! The Games have Concluded! \n", scores)
     print("\nFinal Score:", scores)
-   
-    if scores["Player"] == scores["CPU"] or (scores["Stalemate"] > scores["Player"] and scores["Stalemate"] > scores["CPU"]):
-        print("Words of the world wistfully weave a wayward, worrisome waltz with a Stalemate between Humans and Machines! 🌬🎑🗞")
-        
-    elif scores["Player"] > scores["CPU"]:
+           
+    if scores["Player"] > scores["CPU"]:
         print("Humans Prevail! 👩‍🎓🧑‍💻🕵️‍♂️")
     
     elif scores["Player"] < scores["CPU"]:
