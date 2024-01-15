@@ -14,7 +14,7 @@ def roshambo():
     
     # set scoreboard
     scores = {"Player": 0, "CPU": 0, "Stalemate": 0}
-    scoreboard = []
+    gamelog = []
 
     while True: # start game of roshambo
         user_input = input("Draw on shoot...\n  Rock, Paper, Scissors\n\n    Shoot:").strip().lower()
@@ -46,13 +46,14 @@ def roshambo():
         # round recap, update scoreboard
         print(f"\nRound Result: {result}")
         scores[winner] += 1
-        scoreboard.append((user_choice, cpu_choice))
+        gamelog.append((user_choice, cpu_choice))
         print(f"{result}\nCurrent Score: {scores}\n")
         
     # game over, show final score and winner
     print("\nAtlas! The Games have Concluded! \n", scores)
     print("\nFinal Score:", scores)
-           
+   
+        
     if scores["Player"] > scores["CPU"]:
         print("Humans Prevail! 👩‍🎓🧑‍💻🕵️‍♂️")
     
@@ -65,7 +66,7 @@ def roshambo():
 
     # display recap of all the rounds
     print(f"\nRound Recaps: ")
-    for index, (player, cpu) in enumerate(scoreboard, start=1):
+    for index, (player, cpu) in enumerate(gamelog, start=1):
         print(f"Round {index}: You chose {player.capitalize()}, CPU chose {cpu.capitalize()}")
 
 ####    Main function    ####
